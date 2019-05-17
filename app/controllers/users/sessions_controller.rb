@@ -1,4 +1,4 @@
-class Users::SessionsController < ApplicationController
+class Users::SessionsController < ActionController::API
   include Devise::Controllers::SignInOut
 
   def create
