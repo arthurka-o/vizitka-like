@@ -13,6 +13,14 @@ class CardsController < ApplicationController
     end
   end
 
+  def update
+    if card.save
+      render json: card
+    else
+      head 400
+    end
+  end
+
   private
 
   def cards_params

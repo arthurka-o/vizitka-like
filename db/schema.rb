@@ -44,12 +44,6 @@ ActiveRecord::Schema.define(version: 2019_06_10_130007) do
     t.index ["card_id"], name: "index_cards_textboxes_on_card_id"
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "phone_number", null: false
-    t.text "message", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "name", default: "", null: false
