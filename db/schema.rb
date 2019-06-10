@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_17_082532) do
+ActiveRecord::Schema.define(version: 2019_06_10_073123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cards", force: :cascade do |t|
+    t.string "name"
+    t.integer "weidth", default: 0
+    t.integer "height", default: 0
+    t.string "background"
+  end
+
+  create_table "cards_images", force: :cascade do |t|
+    t.bigint "card_id"
+    t.string "name", null: false
+    t.string "mediafile", default: ""
+    t.integer "height", default: 0
+    t.integer "width", default: 0
+    t.index ["card_id"], name: "index_cards_images_on_card_id"
+  end
+
+  create_table "cards_textboxes", force: :cascade do |t|
+    t.bigint "card_id"
+    t.string "name", null: false
+    t.string "value", default: ""
+    t.integer "height", default: 0
+    t.integer "width", default: 0
+    t.index ["card_id"], name: "index_cards_textboxes_on_card_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "phone_number", null: false
+    t.text "message", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,6 +56,8 @@ ActiveRecord::Schema.define(version: 2019_05_17_082532) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "api_key", null: false
+    t.string "surname"
+    t.string "organization"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

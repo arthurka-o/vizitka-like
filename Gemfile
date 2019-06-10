@@ -21,6 +21,8 @@ gem 'devise'
 # gem 'mini_magick', '~> 4.8'
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'decent_exposure', '3.0.0'
+gem 'carrierwave', '~> 1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
