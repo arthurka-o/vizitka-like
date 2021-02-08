@@ -22,7 +22,7 @@ gem 'devise'
 gem 'rack-cors', :require => 'rack/cors'
 
 gem 'decent_exposure', '3.0.0'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
